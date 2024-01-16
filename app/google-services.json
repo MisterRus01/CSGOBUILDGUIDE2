@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "88659340963",
+    "project_id": "cs-go-build-guide",
+    "storage_bucket": "cs-go-build-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88659340963:android:cda3ee028ac83c04de9916",
+        "android_client_info": {
+          "package_name": "com.example.csgobuildguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBXl8tLz17ibF-MtTCVIsdmNinlhFIDcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
