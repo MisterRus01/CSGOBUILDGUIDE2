@@ -12,9 +12,9 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RecyclerViewCounterTerrorist"
-            android:layout_width="409dp"
-            android:layout_height="729dp"
+            android:id="@+id/RecyclerViewTerrorist"
+            android:layout_width="410dp"
+            android:layout_height="629dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
