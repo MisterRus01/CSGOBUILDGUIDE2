@@ -1,5 +1,6 @@
 package com.example.csgobuildguide
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
-class CounterTerroristFragment : Fragment() {
+class CounterTerroristFragment : Fragment(), OnItemClickListener {
 
 
     override fun onCreateView(
@@ -19,7 +20,7 @@ class CounterTerroristFragment : Fragment() {
 
         ): View? {
 
-        return inflater.inflate(R.layout.fragment_counter_terrorist, container, false)
+        return inflater.inflate(R.layout.fragment_terrorist, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,13 +46,23 @@ class CounterTerroristFragment : Fragment() {
                         downloadCount++
                         if (downloadCount == items.size) {
                             // Set the adapter once all downloads are complete
-                            recyclerView.adapter = RecyclerAdapter(gunList)
+
+                            val extraString = "#0000ff" // Provide the actual value for the extra string
+                            recyclerView.adapter = RecyclerAdapter(gunList, extraString, this)
                             recyclerView.layoutManager = LinearLayoutManager(context)
+
                         }
                     }
                 }
             }
         }
+    }
+    override fun onItemClick(gunInfo: GunInfo, textColor: String) {
+        // Handle item click, e.g., open a new activity
+        val intent = Intent(requireContext(), GunsDetailed::class.java)
+        intent.putExtra("gunInfo", gunInfo)
+        intent.putExtra("textColor", textColor)
+        startActivity(intent)
     }
     private fun removeLast4Chars(inputString: String): String {
         if (inputString.length <= 4) {
