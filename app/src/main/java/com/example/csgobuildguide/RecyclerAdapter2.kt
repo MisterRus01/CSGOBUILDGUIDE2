@@ -1,42 +1,47 @@
 package com.example.csgobuildguide
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class RecyclerAdapter2(private val personsList: List<Persons>) :
-    RecyclerView.Adapter<RecyclerAdapter2.PersonsViewHolder>() {
+class RecyclerAdapter2(private val gunList: List<GunDetails>, val textColor: String) :
+    RecyclerView.Adapter<RecyclerAdapter2.GunViewHolderDetailed>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_counter_terrorist, parent, false)
-        return PersonsViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GunViewHolderDetailed {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_guns_detailed, parent, false)
+        return GunViewHolderDetailed(view)
     }
 
-    override fun onBindViewHolder(holder: PersonsViewHolder, position: Int) {
-        val person = personsList[position]
+    override fun onBindViewHolder(holder: GunViewHolderDetailed, position: Int) {
+        val gun = gunList[position]
 
         Glide.with(holder.itemView.context)
-            .load(person.photoUrl)
-            .placeholder(R.drawable.image)
+            .load(gun.photoPath)
             .into(holder.imageViewPhoto)
 
-        holder.textViewName.text = person.name
-        holder.textViewBirthday.text = person.birthday
-        holder.textViewAddress.text = person.address
+        holder.textViewName.setTextColor(Color.parseColor(textColor))
+        holder.textViewPrice.setTextColor(Color.parseColor(textColor))
+        holder.textViewAdd.setTextColor(Color.parseColor(textColor))
+        holder.textViewName.text = gun.gunName
+        holder.textViewPrice.text = gun.gunPrice
+
     }
 
     override fun getItemCount(): Int {
-        return personsList.size
+        return gunList.size
     }
 
-    class PersonsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewPhoto: ImageView = itemView.findViewById(R.id.imageViewPhoto)
-        val textViewName: TextView = itemView.findViewById(R.id.textViewName)
-        val textViewBirthday: TextView = itemView.findViewById(R.id.textViewBirthday)
-        val textViewAddress: TextView = itemView.findViewById(R.id.textViewAddress)
+    class GunViewHolderDetailed(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageViewPhoto: ImageView = itemView.findViewById(R.id.detailedViewHolder)
+        val textViewName: TextView = itemView.findViewById(R.id.gunName)
+        val textViewPrice: TextView=itemView.findViewById(R.id.gunPrice)
+        val textViewAdd: TextView = itemView.findViewById(R.id.textView)
+
     }
 }
