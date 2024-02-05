@@ -12,32 +12,44 @@
         android:layout_height="141dp"
         android:layout_weight="1">
 
+
         <ImageView
-            android:id="@+id/myProfileGunHolder"
-            android:layout_width="137dp"
-            android:layout_height="144dp"
-            android:layout_weight="1"
+            android:id="@+id/imageViewMP"
+            android:layout_width="136dp"
+            android:layout_height="117dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.215"
+            app:layout_constraintHorizontal_bias="0.184"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/gunNameMyProfile"
+            android:id="@+id/textViewProfileGunName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textColor="#F47047"
             android:textSize="20dp"
             android:textStyle="bold|italic"
-            android:textColor="#F47047"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/myProfileGunHolder"
+            app:layout_constraintHorizontal_bias="0.174"
+            app:layout_constraintStart_toEndOf="@+id/imageViewMP"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/removeGunTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remove"
+            android:textColor="#F47047"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewProfileGunName"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

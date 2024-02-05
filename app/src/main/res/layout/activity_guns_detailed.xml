@@ -13,7 +13,7 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/detailedViewHolder"
+            android:id="@+id/myProfileGunHolder"
             android:layout_width="137dp"
             android:layout_height="144dp"
             android:layout_weight="1"
@@ -25,7 +25,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/gunName"
+            android:id="@+id/gunNameMyProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -35,7 +35,7 @@
             app:layout_constraintBottom_toTopOf="@+id/gunPrice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.261"
-            app:layout_constraintStart_toEndOf="@+id/detailedViewHolder"
+            app:layout_constraintStart_toEndOf="@+id/myProfileGunHolder"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.271" />
 
@@ -50,8 +50,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.261"
-            app:layout_constraintStart_toEndOf="@+id/detailedViewHolder"
-            app:layout_constraintTop_toBottomOf="@+id/gunName" />
+            app:layout_constraintStart_toEndOf="@+id/myProfileGunHolder"
+            app:layout_constraintTop_toBottomOf="@+id/gunNameMyProfile" />
 
         <TextView
             android:id="@+id/textView"

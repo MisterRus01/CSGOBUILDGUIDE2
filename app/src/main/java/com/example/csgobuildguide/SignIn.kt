@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.csgobuildguide.databinding.ActivitySigninBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+
 
 class SignIn : AppCompatActivity() {
 
@@ -14,6 +16,7 @@ class SignIn : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()

@@ -10,6 +10,7 @@ import com.google.firebase.storage.StorageReference
 
 
 class GunsDetailed : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_counter_terrorist)
@@ -46,7 +47,7 @@ class GunsDetailed : AppCompatActivity() {
                         downloadCount++
                         if (downloadCount == items.size) {
                             val extraString = intent.getStringExtra("textColor").toString()
-                            recyclerView.adapter = RecyclerAdapter2(gunList, extraString)
+                            recyclerView.adapter = RecyclerAdapter2(gunList, extraString, this)
                             recyclerView.layoutManager = LinearLayoutManager(this)
                         }
                     }
