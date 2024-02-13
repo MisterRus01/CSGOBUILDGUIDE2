@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -52,9 +53,9 @@ class RecyclerAdapter2(private val gunList: List<GunDetails>, val textColor: Str
             Log.e("GUN", gunList[position].gunName)
             database = FirebaseDatabase.getInstance("https://cs-go-build-guide-default-rtdb.europe-west1.firebasedatabase.app").getReference(userId)
             database.child(gun.gunName).setValue(gun).addOnSuccessListener {
-                Log.e("DODANO", "DODANO")
+                Toast.makeText(context, "Successfully saved", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener{
-                Log.e("NIJE DODANO", "NIJE DODANO")
+                Toast.makeText(context, "Failed to save", Toast.LENGTH_SHORT).show()
             }
 
         }
